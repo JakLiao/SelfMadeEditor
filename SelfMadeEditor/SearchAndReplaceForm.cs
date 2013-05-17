@@ -76,12 +76,10 @@ namespace SelfMadeEditor
         {
             this.strSearch = this.searchText.Text;
             this.strReplace = this.replaceText.Text;
-            while (SearchText(false))
+            SearchText(true);
+            if (this.parentForm.txtMain.SelectedText.Length > 0)
             {
-                if (this.parentForm.txtMain.SelectedText.Length > 0)
-                {
-                    this.parentForm.txtMain.SelectedText = this.strReplace;
-                }
+                this.parentForm.txtMain.SelectedText = this.strReplace;
             }
         }
 
@@ -89,10 +87,12 @@ namespace SelfMadeEditor
         {
             this.strSearch = this.searchText.Text;
             this.strReplace = this.replaceText.Text;
-            SearchText(true);
-            if (this.parentForm.txtMain.SelectedText.Length > 0)
+            while (SearchText(false))
             {
-                this.parentForm.txtMain.SelectedText = this.strReplace;
+                if (this.parentForm.txtMain.SelectedText.Length > 0)
+                {
+                    this.parentForm.txtMain.SelectedText = this.strReplace;
+                }
             }
         }
 

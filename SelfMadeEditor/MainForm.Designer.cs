@@ -209,8 +209,8 @@
             // 
             this.反撤销toolStripMenuItem.Name = "反撤销toolStripMenuItem";
             this.反撤销toolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.反撤销toolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.反撤销toolStripMenuItem.Text = "反撤销";
+            this.反撤销toolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.反撤销toolStripMenuItem.Text = "恢复";
             this.反撤销toolStripMenuItem.Click += new System.EventHandler(this.恢复toolStripMenuItem_Click);
             // 
             // toolStripSeparator5

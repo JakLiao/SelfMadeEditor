@@ -26,7 +26,7 @@ namespace SelfMadeEditor
             {
                 if (this.fileName == null)
                 {
-                    return "无标题";
+                    return "无标题 ---- Editor";
                 }
                 return this.fileName;
             }
