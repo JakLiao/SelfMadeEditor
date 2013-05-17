@@ -85,13 +85,13 @@ namespace SelfMadeEditor
 
         private void replaceAllButton_Click(object sender, EventArgs e)
         {
-            this.strSearch = this.searchText.Text;
-            this.strReplace = this.replaceText.Text;
-            while (SearchText(false))
+            this.strSearch = this.searchText.Text;//搜索文字
+            this.strReplace = this.replaceText.Text;//替换文字
+            while (SearchText(false))//直到没有匹配内容
             {
-                if (this.parentForm.txtMain.SelectedText.Length > 0)
+                if (this.parentForm.txtMain.SelectedText.Length > 0)//如果找到位子
                 {
-                    this.parentForm.txtMain.SelectedText = this.strReplace;
+                    this.parentForm.txtMain.SelectedText = this.strReplace;//替换操作
                 }
             }
         }

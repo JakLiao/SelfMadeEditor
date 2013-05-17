@@ -145,7 +145,7 @@ namespace SelfMadeEditor
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AlertSaveFile(); // 提示用户保存文件
-            this.txtMain.Clear();
+            this.txtMain.Clear();//清空文本内容
             this.isSaved = false;
             this.saveStatus.Text = "未保存";
             this.Text = "无标题 ---- Editor"; 
@@ -167,22 +167,22 @@ namespace SelfMadeEditor
 
         private void 另存为toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.saveFileDialog2.ShowDialog() == DialogResult.OK)
+            if (this.saveFileDialog2.ShowDialog() == DialogResult.OK)//保存文件确认
             {
                 try
                 {
-                    FileInfo finfo = new FileInfo(this.saveFileDialog2.FileName);
-                    if (finfo.Extension == ".rtf")
+                    FileInfo finfo = new FileInfo(this.saveFileDialog2.FileName);//文件名
+                    if (finfo.Extension == ".rtf")//若为rtf格式的文档
                     {
                         this.txtMain.SaveFile(finfo.FullName, RichTextBoxStreamType.RichText);
                     }
-                    else
+                    else//其他情况下的文档
                     {
                         this.txtMain.SaveFile(finfo.FullName, RichTextBoxStreamType.PlainText);
                     }
                     this.FileName = this.saveFileDialog2.FileName;
 
-                    this.isSaved = true;
+                    this.isSaved = true;//更改保存状态为已保存
                     this.saveStatus.Text = "已保存于" + DateTime.Now.ToShortTimeString();
                     this.isChanged = false;
                     this.Text = this.FileName;
